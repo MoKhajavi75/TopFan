@@ -9,24 +9,77 @@ class App extends Component {
           flex: 1,
           justifyContent: 'center',
           alignItems: 'center',
-          backgroundColor: 'coral'
+          backgroundColor: '#F0F8FF'
         }}
       >
-        <TouchableOpacity
+        {/* Top row */}
+        <View
           style={{
-            width: 250,
-            height: 150,
-            justifyContent: 'center',
+            flex: 1,
+            flexDirection: 'row',
+            justifyContent: 'flex-start',
             alignItems: 'center',
-            backgroundColor: 'yellow',
-            borderRadius: 10
-          }}
-          onPress={() => {
-            alert("I'm Pressed!");
+            alignSelf: 'stretch',
+            backgroundColor: 'white'
           }}
         >
-          <Text style={{ fontSize: 32 }}>Press me!</Text>
-        </TouchableOpacity>
+          <TouchableOpacity
+            style={{
+              justifyContent: 'center',
+              alignItems: 'center',
+              alignSelf: 'stretch'
+            }}
+            onPress={() => {
+              alert('View');
+            }}
+          >
+            <Text
+              style={{ marginHorizontal: 25, fontSize: 20, color: 'black' }}
+            >
+              View
+            </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={{
+              justifyContent: 'center',
+              alignItems: 'center',
+              alignSelf: 'stretch'
+            }}
+          >
+            <Text
+              style={{ marginHorizontal: 25, fontSize: 20, color: 'black' }}
+            >
+              Edit
+            </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={{
+              justifyContent: 'center',
+              alignItems: 'center',
+              alignSelf: 'stretch'
+            }}
+          >
+            <Text
+              style={{ marginHorizontal: 25, fontSize: 20, color: 'black' }}
+            >
+              Help
+            </Text>
+          </TouchableOpacity>
+        </View>
+
+        {/* Buttons */}
+        <View
+          style={{
+            flex: 8,
+            flexDirection: 'row',
+            justifyContent: 'center',
+            alignItems: 'center',
+            alignSelf: 'stretch',
+            backgroundColor: '#E6E6FA'
+          }}
+        />
       </View>
     );
   }
