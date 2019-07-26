@@ -1,95 +1,134 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import {
+  View,
+  Text,
+  ActivityIndicator,
+  TextInput,
+  TouchableOpacity
+} from 'react-native';
 
 class App extends Component {
-  render() {
-    const buttons = ['View', 'Edit', 'Help'];
+  constructor() {
+    super();
 
-    return (
-      <View
-        style={{
-          flex: 1,
-          justifyContent: 'center',
-          alignItems: 'center',
-          backgroundColor: '#F0F8FF'
-        }}
-      >
-        {/* Top row */}
+    this.state = {
+      isLoading: true,
+      isSecure: true,
+      username: ''
+    };
+
+    this.setLoading();
+  }
+
+  setLoading() {
+    setTimeout(() => this.setState({ isLoading: false }), 3000);
+  }
+
+  render() {
+    if (this.state.isLoading) {
+      return (
         <View
           style={{
             flex: 1,
-            flexDirection: 'row',
-            justifyContent: 'flex-start',
-            alignItems: 'center',
-            alignSelf: 'stretch',
-            backgroundColor: 'white'
-          }}
-        >
-          {buttons.map(item => {
-            return (
-              <TouchableOpacity
-                key={item}
-                style={{
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  alignSelf: 'stretch'
-                }}
-                onPress={() => {
-                  alert(item);
-                }}
-              >
-                <Text
-                  style={{ marginHorizontal: 25, fontSize: 20, color: 'black' }}
-                >
-                  {item}
-                </Text>
-              </TouchableOpacity>
-            );
-          })}
-        </View>
-
-        {/* Bottom section */}
-        <View
-          style={{
-            flex: 8,
-            flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
-            alignSelf: 'stretch',
-            backgroundColor: '#E6E6FA'
+            backgroundColor: '#F0F8FF'
           }}
         >
-          {/* Output */}
-          <View
-            style={{
-              flex: 2,
-              justifyContent: 'flex-end',
-              alignItems: 'flex-end',
-              alignSelf: 'stretch',
-              backgroundColor: '#D3D3D3',
-              margin: 20,
-              borderWidth: 1
-            }}
-          >
-            <Text style={{ fontSize: 52, margin: 5 }}>0</Text>
-          </View>
+          <ActivityIndicator size='large' color='red' />
+          <Text style={{ fontSize: 30, color: 'black', marginTop: 10 }}>
+            در حال پردازش..
+          </Text>
+        </View>
+      );
+    } else {
+      const onChangeText = text => {
+        this.setState({ username: text });
+      };
 
-          {/* Buttons */}
+      return (
+        <View
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: '#F0F8FF'
+          }}
+        >
+          {/* Show the text */}
           <View
             style={{
-              flex: 8,
+              width: 250,
+              height: 100,
               justifyContent: 'center',
               alignItems: 'center',
-              alignSelf: 'stretch',
-              backgroundColor: 'white',
-              margin: 20
+              borderWidth: 1,
+              borderColor: 'red',
+              borderRadius: 10,
+              marginBottom: 30
             }}
           >
-            <Text style={{ fontSize: 52 }}>Buttons</Text>
+            <Text style={{ fontSize: 40, color: 'black' }}>
+              {this.state.username}
+            </Text>
           </View>
+
+          {/* Text input */}
+          <View
+            style={{
+              width: 250,
+              height: 100,
+              justifyContent: 'center',
+              alignItems: 'center',
+              borderWidth: 1,
+              borderRadius: 10
+            }}
+          >
+            <TextInput
+              style={{
+                flex: 1,
+                justifyContent: 'center',
+                alignItems: 'center',
+                alignSelf: 'stretch',
+                fontSize: 32,
+                textAlign: 'center'
+              }}
+              value={this.state.text}
+              onChangeText={onChangeText}
+              onEndEditing={() => {
+                if (this.state.username.length == 2) {
+                  alert('OK!');
+                } else {
+                  alert('Nokay :|');
+                }
+              }}
+              placeholder='لطفا وارد کنید!'
+              maxLength={4}
+              secureTextEntry={this.state.isSecure}
+            />
+          </View>
+
+          {/* Button */}
+          <TouchableOpacity
+            style={{
+              width: 250,
+              height: 100,
+              justifyContent: 'center',
+              alignItems: 'center',
+              borderWidth: 1,
+              borderRadius: 10,
+              backgroundColor: 'coral',
+              marginTop: 30
+            }}
+            onPress={() => {
+              this.setState({ isSecure: !this.state.isSecure });
+            }}
+          >
+            <Text>Click here to toggle secure</Text>
+          </TouchableOpacity>
         </View>
-      </View>
-    );
+      );
+    }
   }
 }
 
