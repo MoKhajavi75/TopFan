@@ -7,7 +7,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-class App extends Component {
+class HW2 extends Component {
   constructor() {
     super();
 
@@ -132,4 +132,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default HW2;
