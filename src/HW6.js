@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, FlatList } from 'react-native';
 
 class HW6 extends Component {
-  constructor() {
-    super();
-
-    this.state = {};
-  }
-
   render() {
+    const data = new Array(5000).fill('x');
+
     return (
       <View
         style={{
@@ -18,18 +14,31 @@ class HW6 extends Component {
           backgroundColor: '#F0F8FF'
         }}
       >
-        <View
-          style={{
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center',
-            alignSelf: 'stretch',
-            borderWidth: 1,
-            margin: 40
+        <FlatList
+          style={{ flex: 1, alignSelf: 'stretch', margin: 20, borderWidth: 1 }}
+          data={data}
+          renderItem={({ item, index }) => {
+            return (
+              <View
+                style={{
+                  height: 70,
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  alignSelf: 'stretch',
+                  backgroundColor: 'coral',
+                  borderWidth: 1,
+                  borderRadius: 10,
+                  marginTop: index == 0 ? 0 : 30
+                }}
+              >
+                <Text style={{ fontSize: 32, color: 'white' }}>
+                  {index + 1 + ' - ' + item}
+                </Text>
+              </View>
+            );
           }}
-        >
-          <Text>...</Text>
-        </View>
+          keyExtractor={item => item}
+        />
       </View>
     );
   }
