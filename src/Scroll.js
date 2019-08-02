@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, ScrollView } from 'react-native';
 
-class HW3 extends Component {
+class Scroll extends Component {
   render() {
     return (
       <View
@@ -77,4 +77,4 @@ class HW3 extends Component {
   }
 }
 
-export default HW3;
+export default Scroll;

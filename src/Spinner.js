@@ -7,7 +7,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-class HW2 extends Component {
+class Spinner extends Component {
   constructor() {
     super();
 
@@ -132,4 +132,4 @@ class HW2 extends Component {
   }
 }
 
-export default HW2;
+export default Spinner;

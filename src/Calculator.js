@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 
-class HW1 extends Component {
+class Calculator extends Component {
   render() {
     const buttons = ['View', 'Edit', 'Help'];
 
@@ -274,4 +274,4 @@ class HW1 extends Component {
   }
 }
 
-export default HW1;
+export default Calculator;

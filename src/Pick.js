@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Picker } from 'react-native';
 
-class HW7 extends Component {
+class Pick extends Component {
   constructor() {
     super();
 
@@ -78,4 +78,4 @@ class HW7 extends Component {
   }
 }
 
-export default HW7;
+export default Pick;

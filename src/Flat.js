@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, FlatList } from 'react-native';
 
-class HW6 extends Component {
+class Flat extends Component {
   render() {
     const data = [
       1,
@@ -86,4 +86,4 @@ class HW6 extends Component {
   }
 }
 
-export default HW6;
+export default Flat;

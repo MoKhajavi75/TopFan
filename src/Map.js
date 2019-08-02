@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 
-class HW4 extends Component {
+class Map extends Component {
   constructor() {
     super();
 
@@ -86,4 +86,4 @@ class HW4 extends Component {
   }
 }
 
-export default HW4;
+export default Map;

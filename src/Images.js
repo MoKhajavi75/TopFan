@@ -7,7 +7,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-class HW5 extends Component {
+class Images extends Component {
   constructor() {
     super();
 
@@ -92,4 +92,4 @@ class HW5 extends Component {
   }
 }
 
-export default HW5;
+export default Images;
