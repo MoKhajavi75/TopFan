@@ -6,7 +6,7 @@ class HW7 extends Component {
     super();
 
     this.state = {
-      size: 20
+      color: 'black'
     };
   }
 
@@ -39,10 +39,11 @@ class HW7 extends Component {
               alignSelf: 'stretch',
               borderWidth: 1,
               borderRadius: 10,
-              margin: 40
+              margin: 40,
+              backgroundColor: this.state.color
             }}
           >
-            <Text style={{ fontSize: Number(this.state.size) }}>xxx</Text>
+            <Text style={{ fontSize: 30, color: 'white' }}>xxx</Text>
           </View>
 
           <View
@@ -61,15 +62,14 @@ class HW7 extends Component {
                 flex: 1,
                 alignSelf: 'stretch'
               }}
-              selectedValue={this.state.size}
+              selectedValue={this.state.color}
               onValueChange={value => {
-                this.setState({ size: value });
+                this.setState({ color: value });
               }}
             >
-              <Picker.Item label='ده' value='10' />
-              <Picker.Item label='بیست' value='20' />
-              <Picker.Item label='سی' value='30' />
-              <Picker.Item label='چهل' value='40' />
+              <Picker.Item label='قرمز' value='red' />
+              <Picker.Item label='آبی' value='blue' />
+              <Picker.Item label='زرد' value='yellow' />
             </Picker>
           </View>
         </View>

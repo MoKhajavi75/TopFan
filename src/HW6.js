@@ -3,7 +3,56 @@ import { View, Text, FlatList } from 'react-native';
 
 class HW6 extends Component {
   render() {
-    const data = new Array(5000).fill('x');
+    const data = [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ];
 
     return (
       <View
@@ -21,23 +70,16 @@ class HW6 extends Component {
             return (
               <View
                 style={{
-                  height: 70,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  alignSelf: 'stretch',
+                  width: 50,
+                  height: 50,
                   backgroundColor: 'coral',
-                  borderWidth: 1,
-                  borderRadius: 10,
-                  marginTop: index == 0 ? 0 : 30
+                  borderRadius: 100,
+                  marginBottom: 20
                 }}
-              >
-                <Text style={{ fontSize: 32, color: 'white' }}>
-                  {index + 1 + ' - ' + item}
-                </Text>
-              </View>
+              />
             );
           }}
-          keyExtractor={item => item}
+          keyExtractor={item => String(item)}
         />
       </View>
     );
