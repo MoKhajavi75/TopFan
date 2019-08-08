@@ -35,6 +35,8 @@ class Landing extends Component {
       }
     ];
 
+    var x = this.props.navigation.getParam('text');
+
     return (
       <View
         style={{
@@ -45,6 +47,8 @@ class Landing extends Component {
           padding: 30
         }}
       >
+        <Text style={{ fontSize: 40, marginBottom: 20 }}>{x}</Text>
+
         <View
           style={{
             flex: 1,

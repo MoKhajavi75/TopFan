@@ -63,6 +63,11 @@ class Practice extends Component {
           <View style={[styles.full, { marginBottom: 20 }]}>
             <Button
               title='Navigate'
+              onPress={() =>
+                this.props.navigation.navigate('_Landing', {
+                  text: this.state.text
+                })
+              }
             />
           </View>
         </View>
