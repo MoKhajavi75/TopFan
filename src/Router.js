@@ -7,6 +7,9 @@ import MapPage from './MapPage';
 import Images from './Images';
 import Flat from './Flat';
 import Pick from './Pick';
+import Practice from './Practice';
+import Login from './Login';
+import GetPage from './GetPage';
 
 const RootStack = createStackNavigator(
   {
@@ -17,10 +20,13 @@ const RootStack = createStackNavigator(
     _MapPage: MapPage,
     _Images: Images,
     _Flat: Flat,
-    _Pick: Pick
+    _Pick: Pick,
+    _Practice: Practice,
+    _Login: Login,
+    _GetPage: GetPage
   },
   {
-    initialRouteName: '_Landing',
+    initialRouteName: '_GetPage',
     navigationOptions: {
       header: null
     }
