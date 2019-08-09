@@ -11,7 +11,8 @@ import {
   Practice,
   Login,
   GetPage,
-  Test
+  Test,
+  Album
 } from './screens';
 
 const RootStack = createStackNavigator(
@@ -27,10 +28,11 @@ const RootStack = createStackNavigator(
     _Practice: Practice,
     _Login: Login,
     _GetPage: GetPage,
-    _Test: Test
+    _Test: Test,
+    _Album: Album
   },
   {
-    initialRouteName: '_Test',
+    initialRouteName: '_Album',
     navigationOptions: {
       header: null
     }
