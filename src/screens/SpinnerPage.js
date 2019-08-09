@@ -7,7 +7,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-class Spinner extends Component {
+class SpinnerPage extends Component {
   constructor() {
     super();
 
@@ -132,4 +132,4 @@ class Spinner extends Component {
   }
 }
 
-export default Spinner;
+export { SpinnerPage };

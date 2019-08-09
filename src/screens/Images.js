@@ -45,7 +45,7 @@ class Images extends Component {
               opacity: this.state.opacity
             }}
             resizeMode='stretch'
-            source={require('./back.jpg')}
+            source={require('../images/back.jpg')}
           >
             <View
               style={{
@@ -92,4 +92,4 @@ class Images extends Component {
   }
 }
 
-export default Images;
+export { Images };

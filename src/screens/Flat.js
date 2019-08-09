@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { View, FlatList } from 'react-native';
 
 class Flat extends Component {
   render() {
@@ -86,4 +86,4 @@ class Flat extends Component {
   }
 }
 
-export default Flat;
+export { Flat };

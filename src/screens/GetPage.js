@@ -147,4 +147,4 @@ class GetPage extends Component {
   }
 }
 
-export default GetPage;
+export { GetPage };

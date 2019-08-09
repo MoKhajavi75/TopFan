@@ -82,4 +82,4 @@ class Practice extends Component {
   }
 }
 
-export default Practice;
+export { Practice };

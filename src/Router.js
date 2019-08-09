@@ -1,21 +1,23 @@
 import { createStackNavigator } from 'react-navigation';
-import Landing from './Landing';
-import Calculator from './Calculator';
-import Spinner from './Spinner';
-import Scroll from './Scroll';
-import MapPage from './MapPage';
-import Images from './Images';
-import Flat from './Flat';
-import Pick from './Pick';
-import Practice from './Practice';
-import Login from './Login';
-import GetPage from './GetPage';
+import {
+  Landing,
+  Calculator,
+  SpinnerPage,
+  Scroll,
+  MapPage,
+  Images,
+  Flat,
+  Pick,
+  Practice,
+  Login,
+  GetPage
+} from './screens';
 
 const RootStack = createStackNavigator(
   {
     _Landing: Landing,
     _Calculator: Calculator,
-    _Spinner: Spinner,
+    _SpinnerPage: SpinnerPage,
     _Scroll: Scroll,
     _MapPage: MapPage,
     _Images: Images,

@@ -78,4 +78,4 @@ class Pick extends Component {
   }
 }
 
-export default Pick;
+export { Pick };

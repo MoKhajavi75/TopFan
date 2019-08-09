@@ -11,7 +11,7 @@ class Landing extends Component {
       },
       {
         title: 'Spinner & TextInput',
-        pageName: '_Spinner'
+        pageName: '_SpinnerPage'
       },
       {
         title: 'Scroll View',
@@ -90,4 +90,4 @@ class Landing extends Component {
   }
 }
 
-export default Landing;
+export { Landing };
