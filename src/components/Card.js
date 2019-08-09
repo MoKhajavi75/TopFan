@@ -10,7 +10,7 @@ class Card extends Component {
           width: 350,
           justifyContent: 'center',
           alignItems: 'center',
-          borderRadius: 25,
+          borderRadius: 20,
           borderWidth: 3,
           borderColor: 'black',
           backgroundColor: 'white',
@@ -66,13 +66,17 @@ class Card extends Component {
               justifyContent: 'center',
               alignItems: 'center',
               alignSelf: 'stretch',
-              backgroundColor: 'coral',
+              backgroundColor: 'red',
               borderRadius: 20,
               marginHorizontal: 25,
               marginBottom: 10
             }}
             onPress={() => {
-              Linking.openURL(this.props.url);
+              if (this.props.url) {
+                Linking.openURL(this.props.url);
+              } else {
+                alert("Can't open the url!");
+              }
             }}
           >
             <Text style={{ fontSize: 35, color: 'white', fontWeight: 'bold' }}>
