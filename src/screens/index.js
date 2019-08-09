@@ -9,3 +9,4 @@ export * from './Pick';
 export * from './Practice';
 export * from './Login';
 export * from './GetPage';
+export * from './Test';
