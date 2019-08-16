@@ -1,38 +1,107 @@
-import { createStackNavigator } from 'react-navigation';
-import {
-  Landing,
-  Calculator,
-  SpinnerPage,
-  Scroll,
-  MapPage,
-  Images,
-  Flat,
-  Pick,
-  Practice,
-  Login,
-  GetPage,
-  Test,
-  Album
-} from './screens';
+import React from 'react';
+import { Image } from 'react-native';
+import { createStackNavigator, createTabNavigator } from 'react-navigation';
+import { Weather, Football, Currency, Support } from './screens';
 
 const RootStack = createStackNavigator(
   {
-    _Landing: Landing,
-    _Calculator: Calculator,
-    _SpinnerPage: SpinnerPage,
-    _Scroll: Scroll,
-    _MapPage: MapPage,
-    _Images: Images,
-    _Flat: Flat,
-    _Pick: Pick,
-    _Practice: Practice,
-    _Login: Login,
-    _GetPage: GetPage,
-    _Test: Test,
-    _Album: Album
+    _Tabs: createTabNavigator(
+      {
+        _Weather: {
+          screen: Weather,
+          navigationOptions: {
+            tabBarIcon: ({ focused }) => {
+              return (
+                <Image
+                  style={{
+                    width: 25,
+                    height: 25,
+                    tintColor: focused ? 'red' : 'black'
+                  }}
+                  source={require('./images/Tabs/01.png')}
+                />
+              );
+            }
+          }
+        },
+        _Football: {
+          screen: Football,
+          navigationOptions: {
+            tabBarIcon: ({ focused }) => {
+              return (
+                <Image
+                  style={{
+                    width: 25,
+                    height: 25,
+                    tintColor: focused ? 'red' : 'black'
+                  }}
+                  source={require('./images/Tabs/02.png')}
+                />
+              );
+            }
+          }
+        },
+        _Currency: {
+          screen: Currency,
+          navigationOptions: {
+            tabBarIcon: ({ focused }) => {
+              return (
+                <Image
+                  style={{
+                    width: 25,
+                    height: 25,
+                    tintColor: focused ? 'red' : 'black'
+                  }}
+                  source={require('./images/Tabs/03.png')}
+                />
+              );
+            }
+          }
+        },
+        _Support: {
+          screen: Support,
+          navigationOptions: {
+            tabBarIcon: ({ focused }) => {
+              return (
+                <Image
+                  style={{
+                    width: 25,
+                    height: 25,
+                    tintColor: focused ? 'red' : 'black'
+                  }}
+                  source={require('./images/Tabs/04.png')}
+                />
+              );
+            }
+          }
+        }
+      },
+      {
+        tabBarPosition: 'bottom',
+        tabBarOptions: {
+          showIcon: true,
+          showLabel: false,
+          style: {
+            backgroundColor: 'white',
+            paddingBottom: 10
+          },
+          //labelStyle: {
+          //  color: 'red'
+          //},
+          indicatorStyle: {
+            backgroundColor: 'red',
+            height: 5
+          }
+        },
+        initialRouteName: '_Football',
+        animationEnabled: true,
+        swipeEnabled: true,
+        lazy: false
+      }
+    )
   },
   {
-    initialRouteName: '_Album',
+    initialRouteName: '_Tabs',
     navigationOptions: {
       header: null
     }
