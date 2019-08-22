@@ -93,7 +93,7 @@ const RootStack = createStackNavigator(
             height: 5
           }
         },
-        initialRouteName: '_Football',
+        initialRouteName: '_Weather',
         animationEnabled: true,
         swipeEnabled: true,
         lazy: false
