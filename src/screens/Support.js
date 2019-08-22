@@ -125,7 +125,7 @@ class Support extends Component {
               //Keyboard.dismiss();
 
               // Push new message
-              let newChats = this.state.chats;
+              let newChats = [...this.state.chats];
               let currentTime = new Date();
               var hour = currentTime.getHours();
               var minute = currentTime.getMinutes();
