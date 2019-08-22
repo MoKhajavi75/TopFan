@@ -15,7 +15,7 @@ class Container extends Component {
       >
         <View
           style={{
-            flex: 1,
+            height: 80,
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
