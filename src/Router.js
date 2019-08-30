@@ -12,7 +12,9 @@ import {
   Football,
   Currency,
   Support,
-  Landing
+  Landing,
+  Album,
+  Calculator
 } from './screens';
 import { Header } from './components';
 
@@ -67,7 +69,19 @@ const RootStack = createStackNavigator(
           }
         },
         'خانه': {
-          screen: Landing,
+          screen: createStackNavigator(
+            {
+              _Landing: Landing,
+              _Album: Album,
+              _Calculator: Calculator
+            },
+            {
+              initialRouteName: '_Landing',
+              navigationOptions: {
+                header: null
+              }
+            }
+          ),
           navigationOptions: {
             tabBarIcon: ({ focused }) => {
               return (
