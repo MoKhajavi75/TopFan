@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
-import { WeatherCard, Container, Spinner } from '../components';
+import { WeatherCard, Container, Spinner, WeatherPicker } from '../components';
 import Axios from 'axios';
 
 class Weather extends Component {
@@ -14,8 +14,12 @@ class Weather extends Component {
   }
 
   componentDidMount() {
+    this.refresh();
+  }
+
+  refresh(city = 'tehran', country = 'ir') {
     let key = '10ac66dc760b7718bee8d9ac26cc3143';
-    const url = `http://api.openweathermap.org/data/2.5/weather?q=Karaj,ir&units=metric&appid=${key}`;
+    const url = `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&appid=${key}`;
 
     Axios.get(url)
       .then(response => {
@@ -29,7 +33,15 @@ class Weather extends Component {
 
   render() {
     return (
-      <Container title='آب و هوا'>
+      <View
+        style={{
+          flex: 1,
+          justifyContent: 'center',
+          alignItems: 'center',
+          backgroundColor: '#708090',
+          padding: 10
+        }}
+      >
         {this.state.isLoading ? (
           <View style={{ flex: 6, marginBottom: 45 }}>
             <Spinner />
@@ -52,13 +64,14 @@ class Weather extends Component {
             flex: 2,
             justifyContent: 'center',
             alignItems: 'center',
-            alignSelf: 'stretch',
-            borderWidth: 1
+            alignSelf: 'stretch'
           }}
         >
-          <Text>Pickers</Text>
+          <WeatherPicker
+            refresh={(city, country) => this.refresh(city, country)}
+          />
         </View>
-      </Container>
+      </View>
     );
   }
 }
