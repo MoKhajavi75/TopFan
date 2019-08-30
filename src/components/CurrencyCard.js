@@ -16,7 +16,7 @@ class CurrencyCard extends Component {
             borderWidth: 3,
             borderColor: 'black',
             backgroundColor: 'white',
-            marginVertical: 10
+            marginBottom: 10
           }}
         >
           <View
@@ -75,7 +75,7 @@ class CurrencyCard extends Component {
             borderWidth: 3,
             borderColor: 'black',
             backgroundColor: 'white',
-            marginVertical: 10
+            marginBottom: 10
           }}
         >
           <View

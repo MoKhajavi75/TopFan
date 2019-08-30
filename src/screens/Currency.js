@@ -61,7 +61,8 @@ class Currency extends Component {
                     alignItems: 'center',
                     alignSelf: 'stretch',
                     borderRadius: 10,
-                    backgroundColor: 'khaki'
+                    backgroundColor: 'khaki',
+                    marginBottom: 20
                   }}
                 >
                   <Text style={{ fontSize: 28, fontWeight: 'bold' }}>
