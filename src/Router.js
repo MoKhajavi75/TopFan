@@ -4,6 +4,18 @@ import { createStackNavigator, createTabNavigator } from 'react-navigation';
 import { Weather, Football, Currency, Support } from './screens';
 import { Header } from './components';
 
+const AuthStack = createStackNavigator(
+  {
+    _Login: Login
+  },
+  {
+    initialRouteName: '_Login',
+    navigationOptions: {
+      header: null
+    }
+  }
+);
+
 const RootStack = createStackNavigator(
   {
     _Tabs: createTabNavigator(
@@ -129,7 +141,16 @@ const RootStack = createStackNavigator(
     })
   }
 );
+
+const SwitchNavigator = createSwitchNavigator(
+  {
+    _AuthStack: AuthStack,
+    _RootStack: RootStack,
+    _Splash: Splash
+  },
+  {
+    initialRouteName: '_Splash'
   }
 );
 
-export default RootStack;
+export default SwitchNavigator;
