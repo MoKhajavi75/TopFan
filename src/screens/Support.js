@@ -5,17 +5,31 @@ import {
   FlatList,
   Image,
   TouchableOpacity,
-  TextInput
+  TextInput,
+  AsyncStorage
 } from 'react-native';
+import { Spinner } from '../components';
 
 class Support extends Component {
   constructor() {
     super();
 
     this.state = {
+      isLoading: true,
       chats: [],
       message: ''
     };
+  }
+
+  componentDidMount() {
+    AsyncStorage.getItem('chats')
+      .then(r => {
+        if (r) {
+          this.setState({ chats: JSON.parse(r) });
+        }
+      })
+      .catch(error => alert(error))
+      .finally(() => this.setState({ isLoading: false }));
   }
 
   renderItem = ({ item, index }) => {
@@ -50,47 +64,49 @@ class Support extends Component {
     );
   };
 
-  render() {
+  renderChatBox() {
     return (
       <View
         style={{
           flex: 1,
+          flexDirection: 'row',
           justifyContent: 'center',
           alignItems: 'center',
-          backgroundColor: '#708090',
-          padding: 10
+          height: 75,
+          width: 400,
+          backgroundColor: 'white',
+          borderWidth: 1,
+          borderRadius: 25,
+          borderColor: 'red',
+          position: 'absolute',
+          bottom: 10
         }}
       >
-        <FlatList
-          ref={flatList => {
-            this.flatList = flatList;
-          }}
+        <TouchableOpacity
           style={{
-            flex: 1,
+            flex: 0.7,
+            justifyContent: 'center',
+            alignItems: 'center',
             alignSelf: 'stretch',
-            borderWidth: 1,
-            borderRadius: 10
+            borderRightWidth: 2
           }}
-          data={this.state.chats}
-          renderItem={this.renderItem}
-          keyExtractor={(_, index) => String(index)}
-          onContentSizeChange={() => this.flatList.scrollToEnd()}
-        />
+          onPress={() => {
+            this.setState({ chats: [] });
+            AsyncStorage.removeItem('chats')
+              .then(() => {})
+              .catch(error => alert(error));
+          }}
+        >
+          <Text>X</Text>
+        </TouchableOpacity>
 
         <View
           style={{
-            flex: 1,
+            flex: 6,
             flexDirection: 'row',
             justifyContent: 'center',
             alignItems: 'center',
-            height: 75,
-            width: 350,
-            backgroundColor: 'white',
-            borderWidth: 1,
-            borderRadius: 25,
-            borderColor: 'red',
-            position: 'absolute',
-            bottom: 10
+            alignSelf: 'stretch'
           }}
         >
           <TextInput
@@ -103,6 +119,7 @@ class Support extends Component {
               textAlign: 'center',
               textAlignVertical: 'center'
             }}
+            autoCorrect={false}
             value={this.state.message}
             onChangeText={message => this.setState({ message })}
             placeholder='Your message...'
@@ -140,15 +157,19 @@ class Support extends Component {
                       : !this.state.chats[this.state.chats.length - 1].isUser
                 }
                 /*
-                {
-                  text: Math.random().toFixed(2),
-                  time: hour + ':' + minute,
-                  isUser: false
-                }
-                */
+                  {
+                    text: Math.random().toFixed(2),
+                    time: hour + ':' + minute,
+                    isUser: false
+                  }
+                  */
               );
 
               this.setState({ chats: newChats, message: '' });
+
+              AsyncStorage.setItem('chats', JSON.stringify(newChats))
+                .then(() => {})
+                .catch(error => alert(error));
             }}
             disabled={this.state.message == ''}
           >
@@ -164,6 +185,40 @@ class Support extends Component {
         </View>
       </View>
     );
+  }
+
+  render() {
+    if (this.state.isLoading) {
+      return <Spinner />;
+    } else {
+      return (
+        <View
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: '#708090',
+            padding: 10
+          }}
+        >
+          <FlatList
+            ref={flatList => {
+              this.flatList = flatList;
+            }}
+            style={{
+              flex: 1,
+              alignSelf: 'stretch'
+            }}
+            data={this.state.chats}
+            renderItem={this.renderItem}
+            keyExtractor={(_, index) => String(index)}
+            onContentSizeChange={() => this.flatList.scrollToEnd()}
+          />
+
+          {this.renderChatBox()}
+        </View>
+      );
+    }
   }
 }
 
