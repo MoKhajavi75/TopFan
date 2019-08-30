@@ -7,3 +7,4 @@ export * from './Football';
 export * from './Landing';
 export * from './Currency';
 export * from './Support';
+export * from './Album';
