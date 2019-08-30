@@ -52,6 +52,7 @@ class Currency extends Component {
           >
             <SectionList
               style={{ flex: 1 }}
+              stickySectionHeadersEnabled
               renderSectionHeader={({ section: { title } }) => (
                 <View
                   style={{
