@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Image, FlatList, TouchableOpacity, Text } from 'react-native';
-import { FootballCard, Container, Spinner } from '../components';
+import { FootballCard, Spinner } from '../components';
 import Axios from 'axios';
 
 class Football extends Component {

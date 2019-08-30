@@ -5,8 +5,7 @@ import {
   FlatList,
   Image,
   TouchableOpacity,
-  TextInput,
-  Keyboard
+  TextInput
 } from 'react-native';
 
 class Support extends Component {

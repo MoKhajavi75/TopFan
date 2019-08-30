@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
-import { WeatherCard, Container, Spinner, WeatherPicker } from '../components';
+import { View } from 'react-native';
+import { WeatherCard, Spinner, WeatherPicker } from '../components';
 import Axios from 'axios';
 
 class Weather extends Component {
