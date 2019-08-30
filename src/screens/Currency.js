@@ -65,7 +65,15 @@ class Currency extends Component {
       return <Spinner />;
     } else {
       return (
-        <Container title='قیمت ارز'>
+        <View
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: '#708090',
+            padding: 10
+          }}
+        >
           <View
             style={{
               flex: 8,
@@ -90,7 +98,7 @@ class Currency extends Component {
               showsVerticalScrollIndicator={false}
             />
           </View>
-        </Container>
+        </View>
       );
     }
   }

@@ -76,7 +76,15 @@ class Football extends Component {
       return <Spinner />;
     } else {
       return (
-        <Container title='نتایج فوتبال'>
+        <View
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: '#708090',
+            padding: 10
+          }}
+        >
           <View
             style={{
               flex: 0.8,
@@ -127,7 +135,7 @@ class Football extends Component {
               source={require('../images/Football/01.png')}
             />
           </TouchableOpacity>
-        </Container>
+        </View>
       );
     }
   }
