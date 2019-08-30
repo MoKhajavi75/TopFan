@@ -1,7 +1,19 @@
 import React from 'react';
 import { Image } from 'react-native';
-import { createStackNavigator, createTabNavigator } from 'react-navigation';
-import { Weather, Football, Currency, Support } from './screens';
+import {
+  createStackNavigator,
+  createTabNavigator,
+  createSwitchNavigator
+} from 'react-navigation';
+import {
+  Splash,
+  Login,
+  Weather,
+  Football,
+  Currency,
+  Support,
+  Landing
+} from './screens';
 import { Header } from './components';
 
 const AuthStack = createStackNavigator(
@@ -54,8 +66,8 @@ const RootStack = createStackNavigator(
             }
           }
         },
-        _Currency: {
-          screen: Currency,
+        'خانه': {
+          screen: Landing,
           navigationOptions: {
             tabBarIcon: ({ focused }) => {
               return (
