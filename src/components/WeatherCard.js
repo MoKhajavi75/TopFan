@@ -215,11 +215,9 @@ class WeatherCard extends Component {
           }}
         >
           <Image
-            style={{ width: 115, height: 115 }}
+            style={{ width: 85, height: 85 }}
             source={{
-              uri: `http://openweathermap.org/img/w/${
-                this.props.weatherIcon
-              }.png`
+              uri: `http://openweathermap.org/img/w/${this.props.weatherIcon}.png`
             }}
           />
         </View>
