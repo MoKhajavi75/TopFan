@@ -11,15 +11,15 @@ class Header extends Component {
   constructor() {
     super();
 
-    if (Platform.OS === 'android') {
-      UIManager.setLayoutAnimationEnabledExperimental &&
-        UIManager.setLayoutAnimationEnabledExperimental(true);
-    }
+    // if (Platform.OS === 'android') {
+    //  UIManager.setLayoutAnimationEnabledExperimental &&
+    //    UIManager.setLayoutAnimationEnabledExperimental(true);
+    // }
   }
 
-  componentWillUpdate() {
-    LayoutAnimation.spring();
-  }
+  // componentWillUpdate() {
+  //   LayoutAnimation.spring();
+  // }
 
   render() {
     return (
