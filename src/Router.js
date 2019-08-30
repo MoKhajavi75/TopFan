@@ -2,12 +2,13 @@ import React from 'react';
 import { Image } from 'react-native';
 import { createStackNavigator, createTabNavigator } from 'react-navigation';
 import { Weather, Football, Currency, Support } from './screens';
+import { Header } from './components';
 
 const RootStack = createStackNavigator(
   {
     _Tabs: createTabNavigator(
       {
-        _Weather: {
+        'آب و هوا': {
           screen: Weather,
           navigationOptions: {
             tabBarIcon: ({ focused }) => {
@@ -24,7 +25,7 @@ const RootStack = createStackNavigator(
             }
           }
         },
-        _Football: {
+        'فوتبال': {
           screen: Football,
           navigationOptions: {
             tabBarIcon: ({ focused }) => {
@@ -58,8 +59,8 @@ const RootStack = createStackNavigator(
             }
           }
         },
-        _Support: {
-          screen: Support,
+        'ارز': {
+          screen: Currency,
           navigationOptions: {
             tabBarIcon: ({ focused }) => {
               return (
@@ -70,6 +71,23 @@ const RootStack = createStackNavigator(
                     tintColor: focused ? 'red' : 'black'
                   }}
                   source={require('./images/Tabs/04.png')}
+                />
+              );
+            }
+          }
+        },
+        'پشتیبانی': {
+          screen: Support,
+          navigationOptions: {
+            tabBarIcon: ({ focused }) => {
+              return (
+                <Image
+                  style={{
+                    width: 25,
+                    height: 25,
+                    tintColor: focused ? 'red' : 'black'
+                  }}
+                  source={require('./images/Tabs/05.png')}
                 />
               );
             }
@@ -93,7 +111,7 @@ const RootStack = createStackNavigator(
             height: 5
           }
         },
-        initialRouteName: '_Weather',
+        initialRouteName: 'خانه',
         animationEnabled: true,
         swipeEnabled: true,
         lazy: false
@@ -102,9 +120,15 @@ const RootStack = createStackNavigator(
   },
   {
     initialRouteName: '_Tabs',
-    navigationOptions: {
-      header: null
-    }
+    navigationOptions: ({ navigation }) => ({
+      header: (
+        <Header
+          title={navigation.state.routes[navigation.state.index].routeName}
+        />
+      )
+    })
+  }
+);
   }
 );
 
