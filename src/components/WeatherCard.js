@@ -59,24 +59,24 @@ class WeatherCard extends Component {
         {
           icon: require('../images/Weather/03.png'),
           title: 'سرعت باد',
-          value: this.props.windSpeed || 0
+          value: this.props.windSpeed
         },
         {
           icon: require('../images/Weather/04.png'),
           title: 'درجه باد',
-          value: this.props.windDegree || 0
+          value: this.props.windDegree
         }
       ],
       [
         {
           icon: require('../images/Weather/05.png'),
           title: 'رطوبت',
-          value: this.props.humidity || 0
+          value: this.props.humidity
         },
         {
           icon: require('../images/Weather/06.png'),
           title: 'وسعت دید',
-          value: this.props.visibility / 10000 || 0
+          value: this.props.visibility
         }
       ]
     ];
