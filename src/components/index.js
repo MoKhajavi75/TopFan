@@ -10,4 +10,5 @@ export * from './CurrencyCard';
 
 export * from './AlbumCard';
 
+export * from './CheckBox';
 export * from './Spinner';
