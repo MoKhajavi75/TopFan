@@ -6,7 +6,8 @@ import {
   TextInput,
   ActivityIndicator,
   AsyncStorage,
-  ScrollView
+  ScrollView,
+  StatusBar
 } from 'react-native';
 import Modal from 'react-native-modalbox';
 import LinearGradient from 'react-native-linear-gradient';
@@ -324,6 +325,8 @@ class Login extends Component {
           alignSelf: 'stretch'
         }}
       >
+        <StatusBar hidden animated />
+
         {this.renderHeader()}
 
         {this.renderInputs()}
