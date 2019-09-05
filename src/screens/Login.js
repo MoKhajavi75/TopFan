@@ -251,11 +251,11 @@ class Login extends Component {
             </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity
+          <CheckBox
             onPress={() => this.setState({ rules: !this.state.rules })}
-          >
-            <CheckBox style={{ marginLeft: 10 }} checked={this.state.rules} />
-          </TouchableOpacity>
+            style={{ marginLeft: 10 }}
+            checked={this.state.rules}
+          />
         </View>
 
         <TouchableOpacity

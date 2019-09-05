@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { TouchableOpacity, Text } from 'react-native';
 
 class CheckBox extends Component {
   render() {
     return (
-      <View
+      <TouchableOpacity
         style={[
           {
             width: 22,
@@ -17,6 +17,7 @@ class CheckBox extends Component {
           },
           this.props.style
         ]}
+        onPress={() => this.props.onPress()}
       >
         {this.props.checked ? (
           <Text
@@ -28,7 +29,7 @@ class CheckBox extends Component {
             ✓
           </Text>
         ) : null}
-      </View>
+      </TouchableOpacity>
     );
   }
 }
