@@ -3,6 +3,7 @@ import { Image } from 'react-native';
 import {
   createStackNavigator,
   createTabNavigator,
+  createDrawerNavigator,
   createSwitchNavigator
 } from 'react-navigation';
 import {
@@ -161,6 +162,7 @@ const RootStack = createStackNavigator(
     navigationOptions: ({ navigation }) => ({
       header: (
         <Header
+          navigation={navigation}
           title={navigation.state.routes[navigation.state.index].routeName}
         />
       )
@@ -171,7 +173,25 @@ const RootStack = createStackNavigator(
 const SwitchNavigator = createSwitchNavigator(
   {
     _AuthStack: AuthStack,
-    _RootStack: RootStack,
+    _RootStack: createDrawerNavigator(
+      {
+        'صفحه اصلی': RootStack,
+        'آلبوم': Album,
+        'ماشین حساب': Calculator
+      },
+      {
+        initialRouteName: 'صفحه اصلی',
+        drawerPosition: 'right',
+        drawerBackgroundColor: 'khaki',
+        drawerLockMode: 'locked-closed',
+        contentOptions: {
+          activeTintColor: 'red',
+          labelStyle: {
+            fontSize: 25
+          }
+        }
+      }
+    ),
     _Splash: Splash
   },
   {
