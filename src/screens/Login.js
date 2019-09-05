@@ -5,10 +5,13 @@ import {
   TouchableOpacity,
   TextInput,
   ActivityIndicator,
-  AsyncStorage
+  AsyncStorage,
+  ScrollView
 } from 'react-native';
+import Modal from 'react-native-modalbox';
 import LinearGradient from 'react-native-linear-gradient';
 import Axios from 'axios';
+import { CheckBox } from '../components';
 
 class Login extends Component {
   constructor(props) {
@@ -17,7 +20,9 @@ class Login extends Component {
     this.state = {
       username: '',
       password: '',
-      isSending: false
+      isSending: false,
+      rules: false,
+      isModalVisible: false
     };
   }
 
@@ -91,8 +96,124 @@ class Login extends Component {
     );
   }
 
+  renderModal() {
+    return (
+      <Modal
+        style={{
+          width: 300,
+          height: 400,
+          justifyContent: 'center',
+          alignItems: 'center',
+          borderRadius: 10
+        }}
+        position={'center'}
+        isOpen={this.state.isModalVisible}
+        onClosed={() => this.setState({ isModalVisible: false })}
+        coverScreen
+        backdropPressToClose
+        backButtonClose
+        swipeToClose={false}
+        backdropColor='red'
+      >
+        <View
+          style={{
+            flex: 1,
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            alignSelf: 'stretch',
+            backgroundColor: 'white',
+            borderRadius: 10
+          }}
+        >
+          <ScrollView
+            style={{
+              flex: 1,
+              alignSelf: 'stretch',
+              paddingHorizontal: 10
+            }}
+          >
+            <Text>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
+              survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged. It was
+              popularised in the 1960s with the release of Letraset sheets
+              containing Lorem Ipsum passages, and more recently with desktop
+              publishing software like Aldus PageMaker including versions of
+              Lorem Ipsum. The standard chunk of Lorem Ipsum used since the
+              1500s is reproduced below for those interested. Sections 1.10.32
+              and 1.10.33 from de Finibus Bonorum et Malorum by Cicero are also
+              reproduced in their exact original form, accompanied by English
+              versions from the 1914 translation by H. Rackham. Lorem Ipsum is
+              simply dummy text of the printing and typesetting industry. Lorem
+              Ipsum has been the industry's standard dummy text ever since the
+              1500s, when an unknown printer took a galley of type and scrambled
+              it to make a type specimen book. It has survived not only five
+              centuries, but also the leap into electronic typesetting,
+              remaining essentially unchanged. It was popularised in the 1960s
+              with the release of Letraset sheets containing Lorem Ipsum
+              passages, and more recently with desktop publishing software like
+              Aldus PageMaker including versions of Lorem Ipsum. The standard
+              chunk of Lorem Ipsum used since the 1500s is reproduced below for
+              those interested. Sections 1.10.32 and 1.10.33 from de Finibus
+              Bonorum et Malorum by Cicero are also reproduced in their exact
+              original form, accompanied by English versions from the 1914
+              translation by H. Rackham. Lorem Ipsum is simply dummy text of the
+              printing and typesetting industry. Lorem Ipsum has been the
+              industry's standard dummy text ever since the 1500s, when an
+              unknown printer took a galley of type and scrambled it to make a
+              type specimen book. It has survived not only five centuries, but
+              also the leap into electronic typesetting, remaining essentially
+              unchanged. It was popularised in the 1960s with the release of
+              Letraset sheets containing Lorem Ipsum passages, and more recently
+              with desktop publishing software like Aldus PageMaker including
+              versions of Lorem Ipsum. The standard chunk of Lorem Ipsum used
+              since the 1500s is reproduced below for those interested. Sections
+              1.10.32 and 1.10.33 from de Finibus Bonorum et Malorum by Cicero
+              are also reproduced in their exact original form, accompanied by
+              English versions from the 1914 translation by H. Rackham.
+            </Text>
+
+            <TouchableOpacity
+              style={{
+                width: 200,
+                height: 50,
+                justifyContent: 'center',
+                alignItems: 'center',
+                alignSelf: 'center',
+                borderRadius: 10,
+                backgroundColor: '#DC143C',
+                elevation: 5,
+                marginVertical: 15
+              }}
+              onPress={() =>
+                this.setState({ isModalVisible: false, rules: true })
+              }
+            >
+              <Text
+                style={{
+                  color: 'white',
+                  fontSize: 26,
+                  fontFamily: 'Vazir FD'
+                }}
+              >
+                موافقم!
+              </Text>
+            </TouchableOpacity>
+          </ScrollView>
+        </View>
+      </Modal>
+    );
+  }
+
   renderButton() {
-    let disabled = this.state.username == '' || this.state.password == '';
+    let disabled =
+      this.state.username == '' ||
+      this.state.password == '' ||
+      this.state.rules == false;
 
     return (
       <View
@@ -103,6 +224,40 @@ class Login extends Component {
           alignSelf: 'stretch'
         }}
       >
+        <View
+          style={{
+            width: 350,
+            height: 40,
+            flexDirection: 'row',
+            justifyContent: 'flex-end',
+            alignItems: 'center',
+            borderRadius: 10,
+            marginBottom: 5,
+            paddingHorizontal: 10
+          }}
+        >
+          <TouchableOpacity
+            style={{ borderBottomWidth: 1 }}
+            onPress={() => this.setState({ isModalVisible: true })}
+          >
+            <Text
+              style={{
+                color: 'black',
+                fontSize: 20,
+                fontFamily: 'Vazir FD'
+              }}
+            >
+              شرایط و قوانین را می‌پذیرم!
+            </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={() => this.setState({ rules: !this.state.rules })}
+          >
+            <CheckBox style={{ marginLeft: 10 }} checked={this.state.rules} />
+          </TouchableOpacity>
+        </View>
+
         <TouchableOpacity
           style={{
             width: 350,
@@ -111,7 +266,6 @@ class Login extends Component {
             alignItems: 'center',
             borderRadius: 10,
             backgroundColor: '#DC143C',
-            fontSize: 30,
             elevation: 5,
             opacity: disabled ? 0.5 : 1
           }}
@@ -175,6 +329,8 @@ class Login extends Component {
         {this.renderInputs()}
 
         {this.renderButton()}
+
+        {this.renderModal()}
       </LinearGradient>
     );
   }
