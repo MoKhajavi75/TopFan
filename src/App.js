@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
-import { YellowBox } from 'react-native';
-import Router from './Router';
-
-YellowBox.ignoreWarnings([
-  'Method `jumpToIndex` is',
-  'createTabNavigator is deprecated'
-]);
+import { View, Text } from 'react-native';
 
 class App extends Component {
   render() {
-    return <Router />;
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>Hello</Text>
+      </View>
+    );
   }
 }
 
