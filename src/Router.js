@@ -1,13 +1,13 @@
-import { createStackNavigator } from 'react-navigation';
-import { Home, Settings } from './screens';
+import { createBottomTabNavigator } from 'react-navigation';
+import { Camera, Log } from './screens';
 
-const RootStack = createStackNavigator(
+const RootStack = createBottomTabNavigator(
   {
-    _Home: Home,
-    _Settings: Settings
+    _Camera: Camera,
+    _Log: Log
   },
   {
-    initialRouteName: '_Home'
+    initialRouteName: '_Camera'
   }
 );
 

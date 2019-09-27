@@ -1,2 +1,2 @@
-export * from './Home';
-export * from './Settings';
+export * from './Camera';
+export * from './Log';
