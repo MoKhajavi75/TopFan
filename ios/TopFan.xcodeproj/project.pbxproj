@@ -37,24 +37,7 @@
 		2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
-		AB099B69EE47438CBA561818 /* Vazir Black FD.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8056B28E702145379CC3F065 /* Vazir Black FD.ttf */; };
-		A3DF9A137DE94E7BB75B8CCC /* Vazir Bold FD.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 157261409FEC4190B6D57D7B /* Vazir Bold FD.ttf */; };
-		8D9F265F16254D67B59E3287 /* Vazir FD.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B12540E534C47AF9BF59343 /* Vazir FD.ttf */; };
-		0CBB22F0A03B483883F3C0B4 /* Vazir Light FD.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93D18BE56F764A2885B5AD45 /* Vazir Light FD.ttf */; };
-		B339C94E4AB245A3AB8768A0 /* Vazir Medium FD.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50BC47D5FB48466199AF4086 /* Vazir Medium FD.ttf */; };
-		9A843B63D2BE492DAB09C213 /* Vazir Thin FD.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32159C2209B7400A8C5795D2 /* Vazir Thin FD.ttf */; };
-		B5581E3BF1AD42078ECF60DA /* Titillium-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E174227CB60244CDB1182F89 /* Titillium-Black.ttf */; };
-		4F6766F7289440EF89BAB62A /* Titillium-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B4C6D082473B4222816FD99B /* Titillium-Bold.ttf */; };
-		EED0CEE552A441298EAD4F35 /* Titillium-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0DDB3710C5DD43EE99F411CD /* Titillium-Light.ttf */; };
-		33B52356D7964E0084E05709 /* Titillium-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C11825513EF4C8EAD3266A4 /* Titillium-Medium.ttf */; };
-		F75C7E85AB8249319E6AB11F /* Titillium-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC71855A85CD4659BBEB7671 /* Titillium-Thin.ttf */; };
-		F46495A2ED654C5AA1A35EAE /* Titillium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC3387388E5D419DB4FD3B88 /* Titillium.ttf */; };
-		0C2C1408BB684427A3C9C6EC /* Vazir-Black-FD.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 874784A085A74F7DA9EC8688 /* Vazir-Black-FD.ttf */; };
-		AAF9D744468E44C092EF77CD /* Vazir-Bold-FD.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 45781EB19D96419BB96006D4 /* Vazir-Bold-FD.ttf */; };
-		678D502B6F00457281806898 /* Vazir-FD.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93D8D7D1219C4EC7B0C29EAF /* Vazir-FD.ttf */; };
-		2F9BCD586D53485DA6194F0F /* Vazir-Light-FD.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 41D7CC9A4885435EBB3E934B /* Vazir-Light-FD.ttf */; };
-		7C55E5B58BAE404BAC60394C /* Vazir-Medium-FD.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E52C856BFC334AC5A4EF9D4A /* Vazir-Medium-FD.ttf */; };
-		469D443D133348C08C89E908 /* Vazir-Thin-FD.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04577C75C07D4EA4B6079F94 /* Vazir-Thin-FD.ttf */; };
+		38B8A288D5774B2295C13CF1 /* libRNCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2225BAC5A7534DC5B1C358E1 /* libRNCamera.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -360,24 +343,8 @@
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
-		8056B28E702145379CC3F065 /* Vazir Black FD.ttf */ = {isa = PBXFileReference; name = "Vazir Black FD.ttf"; path = "../src/fonts/Vazir Black FD.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		157261409FEC4190B6D57D7B /* Vazir Bold FD.ttf */ = {isa = PBXFileReference; name = "Vazir Bold FD.ttf"; path = "../src/fonts/Vazir Bold FD.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		0B12540E534C47AF9BF59343 /* Vazir FD.ttf */ = {isa = PBXFileReference; name = "Vazir FD.ttf"; path = "../src/fonts/Vazir FD.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		93D18BE56F764A2885B5AD45 /* Vazir Light FD.ttf */ = {isa = PBXFileReference; name = "Vazir Light FD.ttf"; path = "../src/fonts/Vazir Light FD.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		50BC47D5FB48466199AF4086 /* Vazir Medium FD.ttf */ = {isa = PBXFileReference; name = "Vazir Medium FD.ttf"; path = "../src/fonts/Vazir Medium FD.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		32159C2209B7400A8C5795D2 /* Vazir Thin FD.ttf */ = {isa = PBXFileReference; name = "Vazir Thin FD.ttf"; path = "../src/fonts/Vazir Thin FD.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		E174227CB60244CDB1182F89 /* Titillium-Black.ttf */ = {isa = PBXFileReference; name = "Titillium-Black.ttf"; path = "../src/fonts/Titillium-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		B4C6D082473B4222816FD99B /* Titillium-Bold.ttf */ = {isa = PBXFileReference; name = "Titillium-Bold.ttf"; path = "../src/fonts/Titillium-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		0DDB3710C5DD43EE99F411CD /* Titillium-Light.ttf */ = {isa = PBXFileReference; name = "Titillium-Light.ttf"; path = "../src/fonts/Titillium-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		9C11825513EF4C8EAD3266A4 /* Titillium-Medium.ttf */ = {isa = PBXFileReference; name = "Titillium-Medium.ttf"; path = "../src/fonts/Titillium-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		DC71855A85CD4659BBEB7671 /* Titillium-Thin.ttf */ = {isa = PBXFileReference; name = "Titillium-Thin.ttf"; path = "../src/fonts/Titillium-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		AC3387388E5D419DB4FD3B88 /* Titillium.ttf */ = {isa = PBXFileReference; name = "Titillium.ttf"; path = "../src/fonts/Titillium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		874784A085A74F7DA9EC8688 /* Vazir-Black-FD.ttf */ = {isa = PBXFileReference; name = "Vazir-Black-FD.ttf"; path = "../src/fonts/Vazir-Black-FD.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		45781EB19D96419BB96006D4 /* Vazir-Bold-FD.ttf */ = {isa = PBXFileReference; name = "Vazir-Bold-FD.ttf"; path = "../src/fonts/Vazir-Bold-FD.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		93D8D7D1219C4EC7B0C29EAF /* Vazir-FD.ttf */ = {isa = PBXFileReference; name = "Vazir-FD.ttf"; path = "../src/fonts/Vazir-FD.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		41D7CC9A4885435EBB3E934B /* Vazir-Light-FD.ttf */ = {isa = PBXFileReference; name = "Vazir-Light-FD.ttf"; path = "../src/fonts/Vazir-Light-FD.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		E52C856BFC334AC5A4EF9D4A /* Vazir-Medium-FD.ttf */ = {isa = PBXFileReference; name = "Vazir-Medium-FD.ttf"; path = "../src/fonts/Vazir-Medium-FD.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		04577C75C07D4EA4B6079F94 /* Vazir-Thin-FD.ttf */ = {isa = PBXFileReference; name = "Vazir-Thin-FD.ttf"; path = "../src/fonts/Vazir-Thin-FD.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		372F2F5DF1734F1796CB6904 /* RNCamera.xcodeproj */ = {isa = PBXFileReference; name = "RNCamera.xcodeproj"; path = "../node_modules/react-native-camera/ios/RNCamera.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		2225BAC5A7534DC5B1C358E1 /* libRNCamera.a */ = {isa = PBXFileReference; name = "libRNCamera.a"; path = "libRNCamera.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -405,6 +372,7 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
+				38B8A288D5774B2295C13CF1 /* libRNCamera.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,6 +559,7 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
+				372F2F5DF1734F1796CB6904 /* RNCamera.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -612,7 +581,6 @@
 				00E356EF1AD99517003FC87E /* TopFanTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				77CAEB70F57C435895323065 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -638,32 +606,6 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
-		};
-		77CAEB70F57C435895323065 /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				8056B28E702145379CC3F065 /* Vazir Black FD.ttf */,
-				157261409FEC4190B6D57D7B /* Vazir Bold FD.ttf */,
-				0B12540E534C47AF9BF59343 /* Vazir FD.ttf */,
-				93D18BE56F764A2885B5AD45 /* Vazir Light FD.ttf */,
-				50BC47D5FB48466199AF4086 /* Vazir Medium FD.ttf */,
-				32159C2209B7400A8C5795D2 /* Vazir Thin FD.ttf */,
-				E174227CB60244CDB1182F89 /* Titillium-Black.ttf */,
-				B4C6D082473B4222816FD99B /* Titillium-Bold.ttf */,
-				0DDB3710C5DD43EE99F411CD /* Titillium-Light.ttf */,
-				9C11825513EF4C8EAD3266A4 /* Titillium-Medium.ttf */,
-				DC71855A85CD4659BBEB7671 /* Titillium-Thin.ttf */,
-				AC3387388E5D419DB4FD3B88 /* Titillium.ttf */,
-				874784A085A74F7DA9EC8688 /* Vazir-Black-FD.ttf */,
-				45781EB19D96419BB96006D4 /* Vazir-Bold-FD.ttf */,
-				93D8D7D1219C4EC7B0C29EAF /* Vazir-FD.ttf */,
-				41D7CC9A4885435EBB3E934B /* Vazir-Light-FD.ttf */,
-				E52C856BFC334AC5A4EF9D4A /* Vazir-Medium-FD.ttf */,
-				04577C75C07D4EA4B6079F94 /* Vazir-Thin-FD.ttf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 
@@ -1111,24 +1053,6 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				AB099B69EE47438CBA561818 /* Vazir Black FD.ttf in Resources */,
-				A3DF9A137DE94E7BB75B8CCC /* Vazir Bold FD.ttf in Resources */,
-				8D9F265F16254D67B59E3287 /* Vazir FD.ttf in Resources */,
-				0CBB22F0A03B483883F3C0B4 /* Vazir Light FD.ttf in Resources */,
-				B339C94E4AB245A3AB8768A0 /* Vazir Medium FD.ttf in Resources */,
-				9A843B63D2BE492DAB09C213 /* Vazir Thin FD.ttf in Resources */,
-				B5581E3BF1AD42078ECF60DA /* Titillium-Black.ttf in Resources */,
-				4F6766F7289440EF89BAB62A /* Titillium-Bold.ttf in Resources */,
-				EED0CEE552A441298EAD4F35 /* Titillium-Light.ttf in Resources */,
-				33B52356D7964E0084E05709 /* Titillium-Medium.ttf in Resources */,
-				F75C7E85AB8249319E6AB11F /* Titillium-Thin.ttf in Resources */,
-				F46495A2ED654C5AA1A35EAE /* Titillium.ttf in Resources */,
-				0C2C1408BB684427A3C9C6EC /* Vazir-Black-FD.ttf in Resources */,
-				AAF9D744468E44C092EF77CD /* Vazir-Bold-FD.ttf in Resources */,
-				678D502B6F00457281806898 /* Vazir-FD.ttf in Resources */,
-				2F9BCD586D53485DA6194F0F /* Vazir-Light-FD.ttf in Resources */,
-				7C55E5B58BAE404BAC60394C /* Vazir-Medium-FD.ttf in Resources */,
-				469D443D133348C08C89E908 /* Vazir-Thin-FD.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1263,9 +1187,11 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TopFan.app/TopFan";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
 				);
 			};
 			name = Debug;
@@ -1287,9 +1213,11 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TopFan.app/TopFan";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
 				);
 			};
 			name = Release;
@@ -1312,6 +1240,7 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
 				);
 			};
 			name = Debug;
@@ -1333,6 +1262,7 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
 				);
 			};
 			name = Release;
@@ -1362,9 +1292,11 @@
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
 				);
 			};
 			name = Debug;
@@ -1394,9 +1326,11 @@
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
 				);
 			};
 			name = Release;
@@ -1425,9 +1359,11 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
 				);
 			};
 			name = Debug;
@@ -1456,9 +1392,11 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
 				);
 			};
 			name = Release;
