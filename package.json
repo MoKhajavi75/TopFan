@@ -9,10 +9,7 @@
   "dependencies": {
     "react": "16.6.3",
     "react-native": "0.57.8",
-    "react-native-camera": "2.11.2",
-    "react-native-responsive-dimensions": "^2.0.1",
-    "react-navigation": "2.18.3",
-    "reactn": "1.0.0"
+    "react-navigation": "2.18.3"
   },
   "devDependencies": {
     "babel-jest": "24.9.0",

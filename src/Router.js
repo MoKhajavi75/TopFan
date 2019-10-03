@@ -1,17 +1,14 @@
-import { createBottomTabNavigator } from 'react-navigation';
-import { Camera, Log } from './screens';
+import { createStackNavigator } from 'react-navigation';
+import { Slider } from './screens';
 
-const RootStack = createBottomTabNavigator(
+const RootStack = createStackNavigator(
   {
-    دوربین: Camera,
-    گزارش: Log
+    _Slider: Slider
   },
   {
-    initialRouteName: 'دوربین',
-    tabBarOptions: {
-      labelStyle: {
-        fontSize: 25
-      }
+    initialRouteName: '_Slider',
+    navigationOptions: {
+      header: null
     }
   }
 );
