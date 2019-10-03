@@ -1,14 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Router from './Router';
 
-class App extends Component {
-  constructor() {
-    super();
-  }
-
-  render() {
-    return <Router />;
-  }
-}
+const App = () => {
+  return <Router />;
+};
 
 export default App;

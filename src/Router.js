@@ -3,11 +3,16 @@ import { Camera, Log } from './screens';
 
 const RootStack = createBottomTabNavigator(
   {
-    _Camera: Camera,
-    _Log: Log
+    دوربین: Camera,
+    گزارش: Log
   },
   {
-    initialRouteName: '_Camera'
+    initialRouteName: 'دوربین',
+    tabBarOptions: {
+      labelStyle: {
+        fontSize: 25
+      }
+    }
   }
 );
 

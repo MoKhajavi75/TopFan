@@ -1,9 +1,11 @@
-import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import React, { Component } from 'reactn';
+import { View } from 'react-native';
+import { RNCamera } from 'react-native-camera';
 
 class Camera extends Component {
   constructor(props) {
     super(props);
+
     this.state = {};
   }
 
@@ -17,7 +19,29 @@ class Camera extends Component {
           alignSelf: 'stretch'
         }}
       >
-        <Text> Camera </Text>
+        <View
+          style={{
+            width: 200,
+            height: 200,
+            alignSelf: 'center',
+            borderWidth: 2,
+            borderColor: 'red'
+          }}
+        >
+          <RNCamera
+            style={{ flex: 1 }}
+            ratio='1:1'
+            captureAudio={false}
+            onBarCodeRead={e => {
+              let newLog = [...this.global.log];
+              newLog.push({
+                title: e.data,
+                time: Date.now()
+              });
+              this.setGlobal({ log: newLog });
+            }}
+          />
+        </View>
       </View>
     );
   }
