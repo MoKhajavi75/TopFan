@@ -11,7 +11,8 @@ const fa = {
   deleteTitle: 'حذف',
   deleteMessage: 'مطمئنی؟',
   deleteYes: 'آره',
-  deleteNo: 'نه بابا!'
+  deleteNo: 'نه بابا!',
+  settings: 'تنظیمات'
 };
 
 const en = {
@@ -27,7 +28,8 @@ const en = {
   deleteTitle: 'Delete',
   deleteMessage: 'Are you sure?',
   deleteYes: 'Yep',
-  deleteNo: 'Nope!'
+  deleteNo: 'Nope!',
+  settings: 'Settings'
 };
 
 const strings = locale => {
