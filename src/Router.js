@@ -1,14 +1,39 @@
-import { createStackNavigator } from 'react-navigation';
-import { Home, Settings } from './screens';
+import { createStackNavigator, createSwitchNavigator } from 'react-navigation';
+import { Landing, Welcome, Splash } from './screens';
 
-const RootStack = createStackNavigator(
+const IntroStack = createStackNavigator(
   {
-    _Home: Home,
-    _Settings: Settings
+    _Welcome: Welcome
   },
   {
-    initialRouteName: '_Home'
+    initialRouteName: '_Welcome',
+    navigationOptions: {
+      header: null
+    }
   }
 );
 
-export default RootStack;
+const RootStack = createStackNavigator(
+  {
+    _Landing: Landing
+  },
+  {
+    initialRouteName: '_Landing',
+    navigationOptions: {
+      header: null
+    }
+  }
+);
+
+const SwitchNavigator = createSwitchNavigator(
+  {
+    _Splash: Splash,
+    _IntroStack: IntroStack,
+    _RootStack: RootStack
+  },
+  {
+    initialRouteName: '_Splash'
+  }
+);
+
+export default SwitchNavigator;
