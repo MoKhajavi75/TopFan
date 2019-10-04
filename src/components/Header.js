@@ -22,7 +22,40 @@ class Header extends Component {
         }}
       >
         {/* Left */}
-        <View style={{ flex: 1 }} />
+        <TouchableOpacity
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            alignSelf: 'stretch'
+          }}
+          onPress={() => alert('search')}
+        >
+          <View
+            style={{
+              width: responsiveWidth(7),
+              aspectRatio: 1 / 1
+            }}
+          >
+            <Image
+              source={require('../icons/03.png')}
+              style={{
+                flex: 1,
+                width: undefined,
+                height: undefined,
+                tintColor: colors(this.global.theme).secondary,
+                transform: [
+                  {
+                    rotateY:
+                      strings(this.global.locale).DIRECTION == 'ltr'
+                        ? '0deg'
+                        : '180deg'
+                  }
+                ]
+              }}
+            />
+          </View>
+        </TouchableOpacity>
 
         {/* Center */}
         <View
@@ -54,16 +87,16 @@ class Header extends Component {
             alignItems: 'center',
             alignSelf: 'stretch'
           }}
-          onPress={() => this.props.navigation.navigate('_Settings')}
+          onPress={() => alert('Add Section')}
         >
           <View
             style={{
-              width: responsiveWidth(7),
+              width: responsiveWidth(6),
               aspectRatio: 1 / 1
             }}
           >
             <Image
-              source={require('../icons/01.png')}
+              source={require('../icons/05.png')}
               style={{
                 flex: 1,
                 width: undefined,
