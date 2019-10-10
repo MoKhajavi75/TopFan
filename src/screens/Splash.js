@@ -18,7 +18,7 @@ class Splash extends Component {
           this.props.navigation.navigate('_AuthStack');
         }
       })
-      .catch(error => alert(error));
+      .catch(error => console.warn(error));
   }
 
   render() {
