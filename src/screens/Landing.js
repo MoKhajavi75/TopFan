@@ -11,31 +11,24 @@ class Landing extends Component {
     super(props);
 
     this.state = {
+      defaultIcon: true
+    };
+
+    this.setGlobal({
       sections: [
         {
           key: 'abc123',
           icon: require('../icons/04.png'),
-          headerTitle: 'aaa',
+          headerTitle: 'خانه',
           headerTextColor: 'white',
           headerBackColor: '#555555',
           dotsColor: 'black',
           todoBackColor: 'white',
           todoTextColor: 'black',
           checkedLineColor: 'red'
-        },
-        {
-          key: 'efg456',
-          icon: require('../icons/04.png'),
-          headerTitle: 'bbb',
-          headerTextColor: 'white',
-          headerBackColor: '#555555',
-          dotsColor: 'black',
-          todoBackColor: 'khaki',
-          todoTextColor: 'black',
-          checkedLineColor: 'red'
         }
       ]
-    };
+    });
 
     this.setToken();
   }
@@ -54,8 +47,8 @@ class Landing extends Component {
             this.todoFlatList = todoFlatList;
           }}
           style={{ flex: 1, alignSelf: 'stretch' }}
-          data={[{ key: 'Options' }, ...this.state.sections]}
-          renderItem={({ item }) => {
+          data={[{ key: 'Options' }, ...this.global.sections]}
+          renderItem={({ item, index }) => {
             if (item.key === 'Options') {
               return (
                 <Settings
@@ -78,6 +71,15 @@ class Landing extends Component {
                   todoBackColor={item.todoBackColor}
                   todoTextColor={item.todoTextColor}
                   checkedLineColor={item.checkedLineColor}
+                  index={index - 1}
+                  setIcon={(newIcon, index) => {
+                    let newData = [...this.global.sections];
+                    newData[index].icon = newIcon;
+                    this.setGlobal({ sections: newData }, () =>
+                      this.setState({ defaultIcon: false })
+                    );
+                  }}
+                  defaultIcon={this.state.defaultIcon}
                 />
               );
             }
@@ -86,6 +88,7 @@ class Landing extends Component {
           pagingEnabled
           showsHorizontalScrollIndicator={false}
           initialScrollIndex={1}
+          onContentSizeChange={() => this.todoFlatList.scrollToEnd()}
         />
       </View>
     );

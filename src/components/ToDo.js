@@ -18,6 +18,7 @@ import {
   responsiveHeight,
   responsiveWidth
 } from 'react-native-responsive-dimensions';
+import ImagePicker from 'react-native-image-picker';
 
 class ToDo extends Component {
   constructor(props) {
@@ -48,32 +49,24 @@ class ToDo extends Component {
       .finally(() => this.setState({ isLoading: false }));
   }
 
-  renderHeader() {
-    const { headerTitle, headerTextColor, headerBackColor, icon } = this.props;
-
-    return (
-      <View
-        style={{
-          flex: 1,
-          flexDirection:
-            strings(this.global.locale).DIRECTION == 'ltr'
-              ? 'row'
-              : 'row-reverse',
-          justifyContent: 'center',
-          alignItems: 'center',
-          alignSelf: 'stretch',
-          backgroundColor: headerBackColor
-        }}
-      >
-        {/* Left */}
+  renderHeaderLeft() {
+    if (this.global.sections.length > 1) {
+      return (
         <TouchableOpacity
           style={{
             flex: 1,
             justifyContent: 'center',
             alignItems: 'center',
-            alignSelf: 'stretch'
+            alignSelf: 'stretch',
+            opacity: this.global.sections.length == 1 ? 0.5 : 1
           }}
-          onPress={() => alert('delete')}
+          disabled={this.global.sections.length == 1}
+          onPress={() => {
+            let newData = [...this.global.sections];
+            newData.splice(this.props.index, 1);
+
+            this.setGlobal({ sections: newData });
+          }}
         >
           <View
             style={{
@@ -92,6 +85,94 @@ class ToDo extends Component {
             />
           </View>
         </TouchableOpacity>
+      );
+    } else {
+      return <View style={{ flex: 1 }} />;
+    }
+  }
+
+  renderHeaderRight() {
+    return (
+      <TouchableOpacity
+        style={{
+          flex: 1,
+          justifyContent: 'center',
+          alignItems: 'center',
+          alignSelf: 'stretch'
+        }}
+        onPress={() => {
+          const options = {
+            title: 'Select Avatar',
+            maxWidth: responsiveWidth(6),
+            maxHeight: responsiveWidth(6),
+            storageOptions: {
+              skipBackup: true,
+              path: 'images',
+              cameraRoll: false
+            }
+          };
+
+          ImagePicker.showImagePicker(options, response => {
+            // console.warn('Response = ', response);
+
+            if (response.didCancel) {
+              // console.warn('User cancelled image picker');
+            } else if (response.error) {
+              console.warn('ImagePicker Error: ', response.error);
+            } else {
+              // You can also display the image using data:
+              // const source = { uri: 'data:image/jpeg;base64,' + response.data };
+
+              this.props.setIcon(response.uri, this.props.index);
+            }
+          });
+        }}
+      >
+        <View
+          style={{
+            width: responsiveWidth(6),
+            aspectRatio: 1 / 1
+          }}
+        >
+          <Image
+            source={
+              this.props.defaultIcon
+                ? this.props.icon
+                : { uri: this.props.icon }
+            }
+            style={{
+              flex: 1,
+              width: undefined,
+              height: undefined,
+              tintColor: this.props.defaultIcon
+                ? colors(this.global.theme).secondary
+                : null
+            }}
+          />
+        </View>
+      </TouchableOpacity>
+    );
+  }
+
+  renderHeader() {
+    const { headerTitle, headerTextColor, headerBackColor, icon } = this.props;
+
+    return (
+      <View
+        style={{
+          flex: 1,
+          flexDirection:
+            strings(this.global.locale).DIRECTION == 'ltr'
+              ? 'row'
+              : 'row-reverse',
+          justifyContent: 'center',
+          alignItems: 'center',
+          alignSelf: 'stretch',
+          backgroundColor: headerBackColor
+        }}
+      >
+        {/* Left */}
+        {this.renderHeaderLeft()}
 
         {/* Center */}
         <View
@@ -116,32 +197,7 @@ class ToDo extends Component {
         </View>
 
         {/* Right */}
-        <TouchableOpacity
-          style={{
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center',
-            alignSelf: 'stretch'
-          }}
-          onPress={() => alert('Choose from gallery / Camera')}
-        >
-          <View
-            style={{
-              width: responsiveWidth(6),
-              aspectRatio: 1 / 1
-            }}
-          >
-            <Image
-              source={icon}
-              style={{
-                flex: 1,
-                width: undefined,
-                height: undefined,
-                tintColor: colors(this.global.theme).secondary
-              }}
-            />
-          </View>
-        </TouchableOpacity>
+        {this.renderHeaderRight()}
       </View>
     );
   }
@@ -303,6 +359,20 @@ class ToDo extends Component {
           keyExtractor={(item, index) => item.title + index}
           showsVerticalScrollIndicator={false}
           onContentSizeChange={() => this.flatList.scrollToEnd()}
+          ListEmptyComponent={() => {
+            return (
+              <View
+                style={{
+                  flex: 1,
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  alignSelf: 'stretch'
+                }}
+              >
+                <Text>هیچی نیس</Text>
+              </View>
+            );
+          }}
         />
       </View>
     );
