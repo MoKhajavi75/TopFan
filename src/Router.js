@@ -32,7 +32,7 @@ const SwitchNavigator = createSwitchNavigator(
     _RootStack: RootStack
   },
   {
-    initialRouteName: '_Splash'
+    initialRouteName: '_RootStack'
   }
 );
 
