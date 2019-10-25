@@ -4805,6 +4805,11 @@ react-lifecycles-compat@^3, react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
+react-native-animated-ruler@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-animated-ruler/-/react-native-animated-ruler-1.0.0.tgz#b887a4577ba4946de73523a5c76b3db8749cd0e5"
+  integrity sha512-qRo7UZ1NO2hpDEFxIzoDTxp3HQnSf0b1nXdo97f0bO/jhNZMPSp29/e6czXs3sbrD/n/jxu3L+vajJtUVtfwnQ==
+
 react-native-dismiss-keyboard@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/react-native-dismiss-keyboard/-/react-native-dismiss-keyboard-1.0.0.tgz#32886242b3f2317e121f3aeb9b0a585e2b879b49"

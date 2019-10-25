@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, NetInfo } from 'react-native';
+import { Input } from '../components';
 
 class Login extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      txt: ''
+    };
   }
 
   render() {
@@ -19,7 +22,15 @@ class Login extends Component {
           padding: 10
         }}
       >
-        <Text style={{ fontSize: 25, color: 'white' }}>Login</Text>
+        <Input
+          width={300}
+          height={80}
+          value={this.state.txt}
+          onChangeText={txt => this.setState({ txt })}
+          placeholder='Email'
+          correctColor='lime'
+          wrongColor='red'
+        />
       </View>
     );
   }
