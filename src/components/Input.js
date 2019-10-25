@@ -25,7 +25,7 @@ type Props = {
   /**
    * Placeholder
    */
-  placeholder: 'Phone' | 'Email',
+  placeholder: 'Name' | 'Phone' | 'Email',
 
   /**
    * Color of border if it is valid
@@ -39,11 +39,15 @@ type Props = {
 };
 
 class Input extends Component<Props> {
-  check(input, type: 'Phone' | 'Email') {
+  check(input, type: 'Name' | 'Phone' | 'Email') {
+    let name_re = /^[A-Za-z ]+$/;
     let email_re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     let iranianPhone_re = /^09[0-9]{9}$/; //regex101.com
 
     switch (type) {
+      case 'Name':
+        return input == '' ? undefined : name_re.test(input);
+
       case 'Phone':
         return input == '' ? undefined : iranianPhone_re.test(input);
 
