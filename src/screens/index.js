@@ -1,5 +1,2 @@
-export * from './Splash';
-
-export * from './Login';
-
-export * from './Landing';
+export * from './Counter';
+export * from './Show';

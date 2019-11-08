@@ -1,6 +1,11 @@
+import { createStackNavigator } from 'react-navigation';
+import Counter from './screens/Counter';
+import Show from './screens/Show';
 
 const RootStack = createStackNavigator(
   {
+    _Counter: Counter,
+    _Show: Show
   },
   {
     navigationOptions: {
@@ -9,3 +14,4 @@ const RootStack = createStackNavigator(
   }
 );
 
+export default RootStack;
