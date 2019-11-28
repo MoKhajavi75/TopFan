@@ -1,23 +1,23 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
-import { A, B, PS } from '../components';
+import { View, Text } from 'react-native';
 
-class Login extends Component {
+class B extends Component {
   render() {
     return (
       <View
         style={{
-          flex: 1,
+          width: 250,
+          height: 85,
           justifyContent: 'center',
           alignItems: 'center',
-          backgroundColor: '#708090',
+          backgroundColor: '#726',
           padding: 10
         }}
       >
-        <PS android={<A />} iOS={<B />} />
+        <Text style={{ fontSize: 25, color: 'white' }}>B</Text>
       </View>
     );
   }
 }
 
-export { Login };
+export { B };
